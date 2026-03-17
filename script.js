@@ -199,17 +199,17 @@ function updateInvoicePreview() {
   const taxSection = isInterState
     ? `
       <div class="total-row"><span>(+) IGST </span><span>₹${igstAmount.toFixed(
-        2
+        2,
       )}</span></div>
       <div class="total-row"><span>(+) CGST</span><span>₹0.00</span></div>
       <div class="total-row"><span>(+) SGST</span><span>₹0.00</span></div>
     `
     : `
       <div class="total-row"><span>(+) CGST </span><span>₹${cgstAmount.toFixed(
-        2
+        2,
       )}</span></div>
       <div class="total-row"><span>(+) SGST </span><span>₹${sgstAmount.toFixed(
-        2
+        2,
       )}</span></div>
       <div class="total-row"><span>(+) IGST</span><span>₹0.00</span></div>
     `;
@@ -224,11 +224,11 @@ function updateInvoicePreview() {
       <div class="company-contact">GSTN: 07ESVPK4501D1ZP</div>
     </div>
 
-    <div class="invoice-title">INVOICE</div>
+    <div class="invoice-title">PERFORMA</div>
     <div class="invoice-details">
       <table>
         <tr>
-          <td><strong>Invoice No:</strong> ${invoiceNumber}</td>
+          <td><strong>Performa No:</strong> ${invoiceNumber}</td>
           <td><strong>Date:</strong> ${formatDate(invoiceDate)}</td>
           <td><strong>Place of Supply:</strong> ${placeOfSupply}</td>
           <td><strong>Vehicle No:</strong> ${vehicleNo}</td>
@@ -242,7 +242,7 @@ function updateInvoicePreview() {
         <p><strong>Name:</strong> ${receiverName}</p>
         <p><strong>Address:</strong> ${receiverAddress.replace(
           /\n/g,
-          "<br>"
+          "<br>",
         )}</p>
         <p><strong>GSTN:</strong> ${receiverGSTN}</p>
         <p><strong>E-WAY Bill:</strong> ${eWayBill}</p>
@@ -252,7 +252,7 @@ function updateInvoicePreview() {
         <p><strong>Name:</strong> ${consigneeName}</p>
         <p><strong>Address:</strong> ${consigneeAddress.replace(
           /\n/g,
-          "<br>"
+          "<br>",
         )}</p>
       </div>
     </div>
@@ -286,7 +286,7 @@ function updateInvoicePreview() {
             <td>₹${item.taxableAmount}</td>
             <td>₹${item.tamount}</td>
           </tr>
-        `
+        `,
           )
           .join("")}
       </tbody>
@@ -296,23 +296,23 @@ function updateInvoicePreview() {
       <div class="totals-container">
         <div class="amount-in-words">
           <h4>Taxable in Words: <span>Rupees ${numberToWords(
-            grandTotal
+            grandTotal,
           )} Only</span></h4>
         </div>
         <div class="totals">
           <div class="total-row"><span>Total Taxable Value</span><span>₹${subtotal.toFixed(
-            2
+            2,
           )}</span></div>
           ${
             deliveryCharge > 0
               ? `<div class="total-row"><span>Delivery Charge</span><span>₹${deliveryCharge.toFixed(
-                  2
+                  2,
                 )}</span></div>`
               : ""
           }
           ${taxSection}
           <div class="total-row grand-total"><span>Grand Total</span><span>₹${grandTotal.toFixed(
-            0
+            0,
           )}</span></div>
         </div>
       </div>
@@ -386,7 +386,7 @@ function addItemRow() {
 
   const inputs = newRow.querySelectorAll("input");
   inputs.forEach((input) =>
-    input.addEventListener("input", updateInvoicePreview)
+    input.addEventListener("input", updateInvoicePreview),
   );
 
   updateInvoicePreview();
