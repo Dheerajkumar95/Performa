@@ -224,7 +224,7 @@ function updateInvoicePreview() {
       <div class="company-contact">GSTN: 07ESVPK4501D1ZP</div>
     </div>
 
-    <div class="invoice-title">PERFORMA</div>
+    <div class="invoice-title">PERFORMA INVOICE</div>
     <div class="invoice-details">
       <table>
         <tr>
